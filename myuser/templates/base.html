@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}welcome {% endblock  %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'style.css' %}"> {% endcomment %}
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            
+                <a href="{% url 'welcome' %}">Home</a>
+                <a href="{% url 'booking' %}">Booking</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'profile' %}">Profile</a>
+                <a href="{% url 'logout' %}">Logout</a>
+            
+        </nav>
+    </header>
+    <main>
+        
+        {% block content %}
+            
+        {% endblock content %}
+            
+    </main>
+    <footer>
+        <!-- place footer here -->
+        <div class="moreinfo" >
+        <P> CONTACT INFO 
+            <br> 
+            telno: 0749405673
+            <br>
+            email: parkpro@gmail.com
+            <br>
+            SOCIAL MEDIA
+            <br>
+            x: @parkpro
+            <br>
+            IG: _parkpro
+            <br>
+            facebook: officialparkpro
+        </P>
+        </div> 
+    </footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Profile
+{% endblock title %}
+    
+
+{% block content %}
+        <main>
+           <div>
+            <p>Firstname: {{user.first_name}}</p>
+           </div>
+           <div>
+            <p>Secondname: {{user.last_name}}</p>
+           </div>
+           <div>
+            <p>Email: {{user.email}}</p>
+           </div>
+           <div>
+            <p>Pnone Number: {{user.phone_number}}</p>
+           </div>
+           <div>
+            <p>ID Nmber: {{user.id_number}}</p>
+           </div>
+           
+        </main>
+        <br><br>
+<h1>Your booking information</h1>
+
+{% if slot %}
+<ul>
+  {% for slot in active_slot %}
+    <li>
+      Slot Number:{{slot.number}}br
+      Vehicle:{{slot.vehicle_type}} ({{slot.number_plate}})br
+      Start Time: {{slot.start_time}}br
+    </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>You have no active bookings.</p>
+{% endif %}
+        <hr>
+{% endblock content %}

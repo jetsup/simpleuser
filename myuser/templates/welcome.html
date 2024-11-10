@@ -1,0 +1,47 @@
+
+{% extends 'base.html' %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+{% block content %} 
+    
+    {% comment %} {% if request.user.is_authenticated %} {% endcomment %}
+    <p>
+        <h1>WELCOME {{ user.username}} </h1>
+    </p>
+        <div class="park">
+            <p id="p">
+                <h2>Risks of poor parking in towns and marketplaces</h2>
+                <img src="{% static 'images/image4.jpg' %}" alt="no image4" width="260PX" height="220PX" class="ip1">Bad parking in market places and owns leads to significant disruptions,
+                including trafic congestion and safety hazards. Poorly parked vehicles
+                obstruct trffic flow, create access issues for emmergency vehicles, and blocks 
+                entrances leading to delays and potential accidents. For pedestrians, harphazard parking can force them 
+                onto the road, increasing the risks of injuries. The economic impact is also notable, as difficult 
+                navigation or lack of parking deters customers, negatively affecting local businesses.
+                
+            </p>
+            <br> <br><br>
+            <p id="p2">
+                <h2>Importance of a good parking vehicle system</h2>
+                
+                <img src="{% static 'images/image1.jfif' %}" alt="no image1" height="220px" width="220px" class="ip2">
+                A good vehicle parking system is crucial for maintaining order and safety in busy areas like marketplaces and towns.
+                It helps prevent traffic congestion by ensuring efficient use of available space,allowing smooth vehicle flow and easy access for 
+                emmergency services. Proper parking reduces the risk of accidens by keeping walkways clear for pedesrians and maintaining clear slightlines for 
+                drivers. 
+            </p>
+            <br><br>
+            <p id="p3">
+                <h2>Why use smartpark pro system</h2>
+                <img src="{% static 'images/image3.jfif' %}" alt="" class="ip3">
+                Using a good parking system benefits everyone by keeping our streets safe and accessible.
+                When you park resposibly, you help reduce traffic jams,ensue emergency vehicles can reach those in need,
+                and make it easier for pedesrians to move safely. It also supports local businesses by making it convenient for another shop or visit.
+                Lets's all contribute to smoother, more organized community by parking properly.
+            </p>
+        </div>
+    <hr>
+    {% comment %} {% else %} {% endcomment %}
+    {% comment %} <p>You have not logged in</p> {% endcomment %}
+    {% comment %} <a href="{% url'login '%}">Login<a> {% endcomment %}
+{% comment %} {% endif %} {% endcomment %}
+{% endblock  %}
